@@ -30,7 +30,7 @@
 @push('scripts')
     <script src="{{ asset('assets/js/index.js') }}"></script>
     <script>
-        (window.lhpCalculator || {
+        (window.fociloanscalculator || {
             mount: () => new Promise.resolve({
                 on: () => {}
             })

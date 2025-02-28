@@ -389,18 +389,18 @@
             E = new (n.n(A).a)(),
             r = {
                 on: function (t, e) {
-                    console.log('Listening for event:', 'lhpCalculator:'.concat(t));
-                    return E.on('lhpCalculator:'.concat(t), e), this;
+                    console.log('Listening for event:', 'fociloanscalculator:'.concat(t));
+                    return E.on('fociloanscalculator:'.concat(t), e), this;
                 },
                 off: function (t) {
-                    return E.off('lhpCalculator:'.concat(t)), this
+                    return E.off('fociloanscalculator:'.concat(t)), this
                 },
                 teardown: function () {
                     return E.teardown(), this
                 },
                 emit: function (t, e) {
-                    console.log('Emit event:', 'lhpCalculator:'.concat(t), 'with data:', e);
-                    return E.emit('lhpCalculator:'.concat(t), e), this;
+                    console.log('Emit event:', 'fociloanscalculator:'.concat(t), 'with data:', e);
+                    return E.emit('fociloanscalculator:'.concat(t), e), this;
                 }
             }
         e.a = r
@@ -1048,7 +1048,7 @@
             },
             buydown: n(67).default
         }
-        void 0 === window.lhpCalculator && (window.lhpCalculator = A),
+        void 0 === window.fociloanscalculator && (window.fociloanscalculator = A),
             (e.default = A)
     },
     function (t, e, n) {
@@ -1796,15 +1796,17 @@
             return new Promise(function (n) {
                 var A = 2
                 localStorage.setItem('form:config', JSON.stringify(e)),
+                
                     e.uniqueId && (A = e.uniqueId),
                     'string' == typeof t && (t = document.getElementById(t)),
-                    O.on('lhpCalculator:created', function () {
+                    O.on('fociloanscalculator:created', function () {
                         O.emit(
-                            'lhpCalculator:setConfig',
+                            'fociloanscalculator:setConfig',
                             JSON.parse(localStorage.getItem('form:config'))
                         ),
                             n(r.a)
                     })
+                   
                 var E = document.createElement('iframe')
                 ;(E.src = ''.concat(a, '?dn=').concat(A)),
                     E.setAttribute(
@@ -1978,7 +1980,7 @@
             a = new E.a()
         e.default = function () {
             return new Promise(function (t) {
-                a.teardown(), a.emit('lhpCalculator:destroy'), t(r.a)
+                a.teardown(), a.emit('fociloanscalculator:destroy'), t(r.a)
             })
         }
     },
