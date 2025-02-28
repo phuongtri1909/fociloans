@@ -48,31 +48,9 @@
 @endpush
 
 @section('content')
-    <div id="calculator" style="height: 1000px">
-    </div>
-
+    Trang home
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('assets/js/index.js') }}"></script>
-    <script>
-        (window.lhpCalculator || {
-            mount: () => new Promise.resolve({
-                on: () => {}
-            })
-        }).mount(`calculator`, {
-            page: `/refi`,
-            defaultOptions: "{}",
-        }).then(client => {
-            client.on(`resized`, () => {
-                let busEvent = JSON.parse(event.data.replace("/*framebus*/", ""));
-                let container = document.getElementById(`calculator`);
-
-                const heightChange = busEvent.eventData.height + 65;
-                container.style.height = heightChange + `px`;
-            })
-        })
-    </script>
-
 
 @endpush
