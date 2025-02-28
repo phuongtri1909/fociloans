@@ -173,6 +173,47 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        padding-right: 0;
+    }
+    
+    .mobile-dropdown-toggle {
+        padding: 0.5rem 1rem;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    
+    .hover-dropdown .nav-link.has-dropdown {
+        width: calc(100% - 50px);
+        display: inline-block;
+    }
+    
+    .hover-dropdown .dropdown-menu {
+        display: none;
+    }
+    
+    .hover-dropdown .dropdown-menu.show {
+        display: block;
+    }
+    
+    /* Xóa bỏ arrow mặc định */
+    .hover-dropdown .nav-link.custom-dropdown::after {
+        content: none;
+    }
+    
+    /* Định dạng lại menu con trên mobile */
+    .hover-dropdown .dropdown-menu {
+        box-shadow: none;
+        border-left: 2px solid #336667;
+        border-radius: 0;
+    }
+    
+    /* Container cho nav-link và dropdown-toggle */
+    .mobile-nav-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .hover-dropdown .dropdown-toggle::after {

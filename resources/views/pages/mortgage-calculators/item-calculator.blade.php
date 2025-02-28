@@ -8,11 +8,12 @@
 
 @section('content')
     <section class="custom-container mt-5">
-
         <div id="calculator">
-
         </div>
-        <div class="mt-5">
+    </section>
+
+    <section>
+        <div class="mt-5 container">
             <h3 class="fw-bold">Disclaimer</h3>
 
             <p> Information and interactive calculators are made available to you as self-help tools for your independent
@@ -29,12 +30,12 @@
 @push('scripts')
     <script src="{{ asset('assets/js/index.js') }}"></script>
     <script>
-        (window.lhpCalculator || {
+        (window.fociloanscalculator || {
             mount: () => new Promise.resolve({
                 on: () => {}
             })
         }).mount(`calculator`, {
-            page: `/refi`,
+            page: `{{ $page }}`,
             defaultOptions: "{}",
         }).then(client => {
             client.on(`resized`, () => {
