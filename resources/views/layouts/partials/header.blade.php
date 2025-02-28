@@ -57,7 +57,7 @@
 
 <body>
     <header id="siteHeader" class="site-header">
-        <div class="container">
+        <div class="container-xxl">
             <nav class="navbar navbar-expand-lg py-2">
                 <div class="container-fluid px-0">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -72,10 +72,14 @@
                     <div class="collapse navbar-collapse" id="navbarContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown hover-dropdown">
-                                <a class="nav-link custom-dropdown fw-bold font-header fs-4-5" href="#"
-                                    role="button" aria-expanded="false">
-                                    Programs
-                                </a>
+                                <div class="mobile-nav-container">
+                                    <a class="nav-link custom-dropdown has-dropdown fw-bold font-header fs-4-5" href="#">
+                                        Programs
+                                    </a>
+                                    <span class="mobile-dropdown-toggle d-lg-none" data-bs-toggle="dropdown">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
                                 <ul class="dropdown-menu px-2">
                                     <li><a class="dropdown-item" href="#">Conventional</a></li>
                                     <hr class="dropdown-divider">
@@ -95,10 +99,14 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown hover-dropdown">
-                                <a class="nav-link custom-dropdown fw-bold font-header fs-4-5" href="{{ route('mortgage.calculators') }}"
-                                    role="button" aria-expanded="false">
-                                    Calculators
-                                </a>
+                                <div class="mobile-nav-container">
+                                    <a class="nav-link custom-dropdown has-dropdown fw-bold font-header fs-4-5" href="{{ route('mortgage.calculators') }}">
+                                        Calculators
+                                    </a>
+                                    <span class="mobile-dropdown-toggle d-lg-none" data-bs-toggle="dropdown">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
                                 <ul class="dropdown-menu px-2">
                                     <li><a class="dropdown-item" href="{{ route('mortgage.calculators', 'mortgage') }}">Mortgage Glossary</a></li>
                                     <hr class="dropdown-divider">
@@ -114,10 +122,14 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown hover-dropdown">
-                                <a class="nav-link custom-dropdown fw-bold font-header fs-4-5" href="#"
-                                    role="button" aria-expanded="false">
-                                    Business Loans
-                                </a>
+                                <div class="mobile-nav-container">
+                                    <a class="nav-link custom-dropdown has-dropdown fw-bold font-header fs-4-5" href="#">
+                                        Business Loans
+                                    </a>
+                                    <span class="mobile-dropdown-toggle d-lg-none" data-bs-toggle="dropdown">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
                                 <ul class="dropdown-menu px-2">
                                     <li><a class="dropdown-item" href="#">Multi-Unit</a></li>
                                     <hr class="dropdown-divider">
@@ -129,10 +141,14 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown hover-dropdown">
-                                <a class="nav-link custom-dropdown fw-bold font-header fs-4-5" href="#"
-                                    role="button" aria-expanded="false">
-                                    Learning Center
-                                </a>
+                                <div class="mobile-nav-container">
+                                    <a class="nav-link custom-dropdown has-dropdown fw-bold font-header fs-4-5" href="#">
+                                        Learning Center
+                                    </a>
+                                    <span class="mobile-dropdown-toggle d-lg-none" data-bs-toggle="dropdown">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
                                 <ul class="dropdown-menu px-2">
                                     <li><a class="dropdown-item" href="#">Blog</a></li>
                                     <hr class="dropdown-divider">

@@ -6,32 +6,26 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
-
     public function mortgageCalculators($page = 'index')
     {
-        switch ($page) {
-            case 'mortgage':
-                return view('pages.mortgage-calculators.mortgage');
-            
-            case 'refinance':
-                return view('pages.mortgage-calculators.refinance');
-                
-            case 'affordability':
-                return view('pages.mortgage-calculators.affordability');
-                
-            case 'extra-payment':
-                return view('pages.mortgage-calculators.extra-payment');
-                
-            case 'principal':
-                return view('pages.mortgage-calculators.principal-reduction');
-                
-            case 'income-qualification':
-                return view('pages.mortgage-calculators.income-qualification');
-                
-            default:
-                return view('pages.mortgage-calculators.index');
+        $validCalculators = [
+            'mortgage' => '',
+            'refinance' => 'refi',
+            'affordability' => 'prequal',
+            'extra-payment' => 'payoff',
+            'principal' => 'principal',
+            'income-qualification' => 'income'
+        ];
+
+        if (array_key_exists($page, $validCalculators)) {
+            return view('pages.mortgage-calculators.item-calculator', [
+                'page' => $validCalculators[$page],
+                'title' => ucfirst(str_replace('-', ' ', $page)) . ' Calculator',
+                'calculator_type' => $page
+            ]);
         }
+
+        return view('pages.mortgage-calculators.index');
     }
 
     public function appCalculator()
@@ -41,7 +35,7 @@ class HomeController extends Controller
 
     public function preQualification(Request $request)
     {
-        
+
         return response()->json([
             'message' => 'Pre-qualification successful',
             'data' => $request->all()
@@ -53,8 +47,5 @@ class HomeController extends Controller
         return view('pages.home');
     }
 
-    public function search(Request $request)
-    {
-      
-    }
+    public function search(Request $request) {}
 }
